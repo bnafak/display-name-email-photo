@@ -24,10 +24,10 @@ const Login = () => {
       <button onClick={handleGoogleSignIn}>Google Login</button>
       <div className="mx-auto">
         {user && (
-          <div>
+          <div >
             <h2> Name : {user?.displayName}</h2>
             <h2> Name : {user?.email}</h2>
-            <img src={user?.photoURL} alt="" />
+            <img className="text-center" src={user?.photoURL} alt="" />
           </div>
         )}
       </div>
