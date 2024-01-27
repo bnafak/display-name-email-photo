@@ -8,9 +8,10 @@ const TeachersInfo = () => {
         <div className="bg-green-100 col-span-3 h-full ">
           <div className="text-center">
             <h1 className="bg-blue-400 p-4 font-extrabold">সভাপতির বানী</h1>
-            <img src="chairman.jpg" alt="" />
+            <img className="mx-auto" src="chairman.jpg" alt="" />
             <button className="btn btn-primary">বিস্তারিত</button>
           </div>
+          <br />
           <div className="text-center">
             <h1 className="bg-blue-400 p-4 font-extrabold">প্রধান শিক্ষকের বানী</h1>
             <img src="hm.jpg" alt="" />

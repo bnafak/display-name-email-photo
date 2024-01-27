@@ -1,21 +1,21 @@
 import Swal from "sweetalert2";
 
 const AddProduct = () => {
-  const handleAddStudent = (event) => {
-    event.preventDefault();
 
-    const form = event.target;
+  const handleAddProduct = (e) => {
+    e.preventDefault();
+
+    const form = e.target;
 
     const name = form.name.value;
     const image = form.image.value;
-    const email = form.email.value;
+    const email= form.email.value;
     const mobile = form.mobile.value;
     const year = form.year.value;
     const group = form.group.value;
-    const description = form.rating.value;
-    
+    const description = form.description.value;
 
-    const data = {
+    const newProduct  = {
       name,
       image,
       email,
@@ -24,15 +24,16 @@ const AddProduct = () => {
       group,
       description
     };
-    console.log(data);
+    console.log(newProduct);
+
 
     // send data to server
-    fetch('http://localhost:5000/library', {
+    fetch('http://localhost:5000/product', {
       method: "POST",
       headers: {
         "content-type": "application/json"
       },
-      body: JSON.stringify(data)
+      body: JSON.stringify(newProduct)
     })
       .then((res) => res.json())
       .then((data) => {
@@ -51,7 +52,7 @@ const AddProduct = () => {
   return (
     <div>
       <h2 className="text-center text-2xl mt-6">Add Student</h2>
-      <div onSubmit={handleAddStudent} className="form">
+      <div onSubmit={handleAddProduct} className="form">
         <form className="card-body">
           <div className="flex w-full">
             <div className="form-control w-1/2">
@@ -150,9 +151,10 @@ const AddProduct = () => {
           <div className="form-control mt-6">
           <input
           type="submit"
-          value="Add Student"
+          value="Add Product"
           className="btn btn-block bg-blue-500"
         />
+
           </div>
         </form>
       </div>
