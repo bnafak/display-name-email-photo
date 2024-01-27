@@ -2,13 +2,16 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Login from "./Components/login/Login.jsx";
 import Main from "./Components/LayOut/Main.jsx";
 import Home from "./Components/Home/Home.jsx";
 import ManageCategory from "./pages/ManageCategory.jsx";
 import AddProduct from "./pages/AddProduct.jsx";
 import AddCategory from "./pages/AddCategory.jsx";
 import Dashboard from "./dashboard/Dashboard.jsx";
+import ManageProduct from "./pages/ManageProduct.jsx";
+import Login from "./Components/login/Login.jsx";
+import TeachersInfo from "./Components/Home/পরিচিতি/TeachersInfo.jsx";
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -18,10 +21,15 @@ const router = createBrowserRouter([
         path: "/",
         element: <Home></Home>
       },
-      {
-        path: "login",
-        element: <Login></Login>,
-      },
+     {
+      path:'/login',
+      element:<Login></Login>
+     },
+     {
+      path:'/teachers',
+      element:<TeachersInfo></TeachersInfo>
+    }
+   
     ],
     
   },
@@ -35,7 +43,7 @@ const router = createBrowserRouter([
       },
       {
         path:'/dashboard/manage-product',
-        element: <ManageCategory></ManageCategory>
+        element: <ManageProduct></ManageProduct>
       },
       {
         path:'/dashboard/addCategory',
@@ -44,7 +52,9 @@ const router = createBrowserRouter([
       {
         path:'/dashboard/manage-category',
         element: <ManageCategory></ManageCategory>
-      }
+      },
+   
+    
       
       
     ]

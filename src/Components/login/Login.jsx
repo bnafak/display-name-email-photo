@@ -20,14 +20,18 @@ const Login = () => {
       });
   };
   return (
-    <div>
-      <button onClick={handleGoogleSignIn}>Google Login</button>
+    <div className="w-11/12 mx-auto ">
+      <button onClick={handleGoogleSignIn}>Login</button>
       <div className="mx-auto">
         {user && (
-          <div >
-            <h2> Name : {user?.displayName}</h2>
-            <h2> Name : {user?.email}</h2>
-            <img className="text-center" src={user?.photoURL} alt="" />
+          <div className="card card-compact w-96 bg-base-100 shadow-xl">
+            <figure>
+              <img src={user?.photoURL} alt="Shoes" />
+            </figure>
+            <div className="card-body">
+              <h2 className="text-center">{user?.displayName}</h2>
+              <p className="text-center">{user?.email}</p>
+            </div>
           </div>
         )}
       </div>

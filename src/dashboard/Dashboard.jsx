@@ -21,13 +21,13 @@ const Dashboard = () => {
               to="/dashboard/add-product"
               className="p-2 my-3 bg-orange-200 border border-stone-500 w-full"
             >
-              Add Product
+              Add Student
             </NavLink>
             <NavLink
               to="/dashboard/manage-product"
               className="p-2 my-3 bg-orange-200 border border-stone-500 w-full"
             >
-              Manage Product
+              Manage Student
             </NavLink>
             <NavLink
               to="/dashboard/addCategory"

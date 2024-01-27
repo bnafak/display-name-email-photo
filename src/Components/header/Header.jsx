@@ -1,14 +1,14 @@
-import { Link } from "react-router-dom";
-
+import Navbar from "../Home/Navbar";
 
 const Header = () => {
-    return (
-        <div className="mr-9 flex">
-            <Link className="mr-9" to='/'>Home</Link>
-            <Link className="mr-9" to='/login'>Login</Link>
-            <Link to='/dashboard'>Dashboard</Link>
-        </div>
-    );
+  return (
+    <div className="w-11/12 mx-auto flex-col">
+      <div>
+        <img className="mx-auto" src="banner1.jpg" alt="" />
+      </div>
+      <Navbar></Navbar>
+    </div>
+  );
 };
 
 export default Header;
