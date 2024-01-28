@@ -46,23 +46,28 @@ const Navbar = () => {
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
             <li>
-              <a>হোম</a>
+              <NavLink to="/">
+                <a>হোম</a>
+              </NavLink>
             </li>
             <li>
               <details>
                 <summary>পরিচিতি</summary>
                 <ul className="p-2">
                   <li>
-                    <NavLink to="/teachers">শিক্ষক মন্ডলীর তথ্যাবলী</NavLink>
+                    <a>ইতিহাস</a>
                   </li>
                   <li>
-                    <a>ম্যানেজিং কমিটির তথ্যাবলী</a>
+                    <NavLink to="/ataGlance">এক নজরে</NavLink>
                   </li>
                   <li>
-                    <a>প্রধান শিক্ষকের বাণী</a>
+                    <a>ম্যানেজিং কমিটি</a>
                   </li>
                   <li>
-                    <a>প্রতিষ্ঠানের ইতিহাস</a>
+                    <a>সাফল্য</a>
+                  </li>
+                  <li>
+                    <a>সাংস্কৃতিক কর্মকান্ড</a>
                   </li>
                 </ul>
               </details>
@@ -171,6 +176,7 @@ const Navbar = () => {
                 </ul>
               </details>
             </li>
+            
           </ul>
         </div>
         <div className="navbar-center hidden lg:flex">
@@ -180,6 +186,12 @@ const Navbar = () => {
                 <summary>মিডিয়া</summary>
                 <ul className="p-2">
                   <li>
+                    <a>সাংস্কৃতিক কর্মকান্ড</a>
+                  </li>
+                  <li>
+                    <a> খেলাধুলা</a>
+                  </li>
+                  <li>
                     <a>ফটো গ্যালারী</a>
                   </li>
                   <li>
@@ -188,58 +200,11 @@ const Navbar = () => {
                 </ul>
               </details>
             </li>
-          </ul>
-        </div>
-        <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1">
             <li>
-              <details>
-                <summary>লাইব্রেরী</summary>
-                <ul className="p-2">
-                  <li>
-                    <a>পড়াশোনা</a>
-                  </li>
-                  <li>
-                    <a>স্কুল সার্টিফিকেট</a>
-                  </li>
-                  <li>
-                    <a>বই ডাউনলোড</a>
-                  </li>
-                  <li>
-                    <a>নীতিমালা</a>
-                  </li>
-                </ul>
-              </details>
-            </li>
-
-            <li>
-              <details>
-                <summary>যোগাযোগ</summary>
-                <ul className="p-2">
-                  <li>
-                    <a>ইমেইল</a>
-                  </li>
-                  <li>
-                    <a>মোবাইল</a>
-                  </li>
-                 
-                </ul>
-              </details>
-            </li>
-    
-            <li>
-              <li>
-                <NavLink to="/login">
-                  <a>লগইন</a>
-                </NavLink>
-              </li>
+              <NavLink to='/login'><a>লগইন</a></NavLink>
             </li>
             <li>
-              <li>
-                <NavLink to="/dashboard">
-                  <a>ড্যাশবোর্ড</a>
-                </NavLink>
-              </li>
+              <NavLink to='/dashboard'><a> ড্যাশবোর্ড </a></NavLink>
             </li>
           </ul>
         </div>
@@ -249,3 +214,4 @@ const Navbar = () => {
 };
 
 export default Navbar;
+

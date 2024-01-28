@@ -6,11 +6,12 @@ import Main from "./Components/LayOut/Main.jsx";
 import Home from "./Components/Home/Home.jsx";
 import ManageCategory from "./pages/ManageCategory.jsx";
 import AddProduct from "./pages/AddProduct.jsx";
-import AddCategory from "./pages/AddCategory.jsx";
 import Dashboard from "./dashboard/Dashboard.jsx";
-import ManageProduct from "./pages/ManageProduct.jsx";
 import Login from "./Components/login/Login.jsx";
 import TeachersInfo from "./Components/Home/পরিচিতি/TeachersInfo.jsx";
+import TotalStudent from "./pages/TotalStudent.jsx";
+import StudentCard from "./pages/StudentCard.jsx";
+import Chairman from "./Messages/Chairman.jsx";
 
 const router = createBrowserRouter([
   {
@@ -28,6 +29,10 @@ const router = createBrowserRouter([
      {
       path:'/teachers',
       element:<TeachersInfo></TeachersInfo>
+    },
+    {
+      path:'/msg-chairman',
+      element:<Chairman></Chairman>
     }
    
     ],
@@ -43,12 +48,13 @@ const router = createBrowserRouter([
         loader : () =>fetch('http://localhost:5000/product')
       },
       {
-        path:'/dashboard/manage-product',
-        element: <ManageProduct></ManageProduct>
+        path:'/dashboard/student-card',
+        element: <StudentCard></StudentCard>
       },
       {
-        path:'/dashboard/addCategory',
-        element: <AddCategory></AddCategory>
+        path:'/dashboard/total-student',
+        element: <TotalStudent></TotalStudent>,
+        loader : () =>fetch('http://localhost:5000/product')
       },
       {
         path:'/dashboard/manage-category',

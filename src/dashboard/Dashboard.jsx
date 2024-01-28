@@ -10,7 +10,7 @@ const Dashboard = () => {
 
       <main className="w-11/12 mx-auto ">
         <div className="grid py-5 grid-cols-12 min-h-screen">
-          <div className="col-span-3 h-full flex flex-col items-center">
+          <div className="col-span-2 h-full flex flex-col items-center">
             <NavLink
               to="/dashboard"
               className="p-2 my-3 bg-orange-200 border border-stone-500 w-full"
@@ -24,16 +24,16 @@ const Dashboard = () => {
               Add Student
             </NavLink>
             <NavLink
-              to="/dashboard/manage-product"
+              to="/dashboard/student-card"
               className="p-2 my-3 bg-orange-200 border border-stone-500 w-full"
             >
-              Manage Student
+              Student Card
             </NavLink>
             <NavLink
-              to="/dashboard/addCategory"
+              to="/dashboard/total-student"
               className="p-2 my-3 bg-orange-200 border border-stone-500 w-full"
             >
-              Add Category
+              Total Student
             </NavLink>
             <NavLink
               to="/dashboard/manage-category"
@@ -42,7 +42,7 @@ const Dashboard = () => {
               Manage Category
             </NavLink>
           </div>
-          <div className="bg-green-100 col-span-9 h-full ">
+          <div className="bg-green-100 col-span-10 h-full ">
             <Outlet></Outlet>
           </div>
         </div>
