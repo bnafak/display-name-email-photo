@@ -3,7 +3,7 @@ import { Carousel } from "react-responsive-carousel";
 
 const Banner = () => {
   return (
-    <Carousel className="w-8/12 mx-auto border border-l-black">
+    <Carousel className="w-8/12 mx-auto z-index: -1;">
       <div>
         <img src="https://i.postimg.cc/2SRJ1Z4X/01.jpg" />
         <p className="legend">কুইজ প্রতিযোগিতার পুরস্কার প্রদান</p>

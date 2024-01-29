@@ -1,0 +1,165 @@
+import Swal from "sweetalert2";
+
+
+const Update = () => {
+
+    const handleAddProduct = (e) => {
+        e.preventDefault();
+    
+        const form = e.target;
+    
+        const name = form.name.value;
+        const image = form.image.value;
+        const email= form.email.value;
+        const mobile = form.mobile.value;
+        const year = form.year.value;
+        const group = form.group.value;
+        const description = form.description.value;
+    
+        const newProduct  = {
+          name,
+          image,
+          email,
+          mobile,
+          year,
+          group,
+          description
+        };
+        console.log(newProduct);
+    
+        // send data to server
+        fetch('http://localhost:5000/product', {
+          method: "PUT",
+          headers: {
+            "content-type": "application/json"
+          },
+          body: JSON.stringify(newProduct)
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+            if(data.insertedID){
+                Swal.fire({
+                    title: 'success!',
+                    text: 'Data inserted Successfully',
+                    icon: 'success',
+                    confirmButtonText: 'Cool'
+                  })
+            }
+          });
+      };
+    return (
+    
+        <div>
+        <h2 className="text-center text-2xl mt-6">Update Student</h2>
+        <div onSubmit={handleAddProduct} className="form">
+          <form className="card-body">
+            <div className="flex w-full">
+              <div className="form-control w-1/2">
+                <label className="">
+                  <span className="">Student Name</span>
+                </label>
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Enter a product"
+                  className="input input-bordered"
+                  required
+                />
+              </div>
+              <div className="form-control w-1/2">
+                <label className="">
+                  <span className="">Student Image</span>
+                </label>
+                <input
+                  type="text"
+                  name="image"
+                  placeholder="Insert student image"
+                  className="input input-bordered"
+                  required
+                />
+              </div>
+            </div>
+            <div className="flex w-full">
+              <div className="form-control w-1/2">
+                <label className="">
+                  <span className="">Email</span>
+                </label>
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="Enter email"
+                  className="input input-bordered"
+                  required
+                />
+              </div>
+              <div className="form-control w-1/2">
+                <label className="">
+                  <span className="">Mobile</span>
+                </label>
+                <input
+                  type="text"
+                  name="mobile"
+                  placeholder="Mobile"
+                  className="input input-bordered"
+                  required
+                />
+              </div>
+            </div>
+            <div className="flex w-full">
+              <div className="form-control w-1/2">
+                <label className="">
+                  <span className="">SSC Year</span>
+                </label>
+                <input
+                  type="textarea"
+                  name="year"
+                  placeholder="Enter SSC Year"
+                  className="input input-bordered"
+                  required
+                />
+              </div>
+              <div className="form-control w-1/2">
+                <label className="">
+                  <span className="">Group</span>
+                </label>
+                <input
+                  type="text"
+                  name="group"
+                  placeholder="group"
+                  className="input input-bordered"
+                  required
+                />
+              </div>
+            </div>
+  
+            <div className="flex w-full">
+              <div className="form-control w-full">
+                <label className="">
+                  <span className="">Description</span>
+                </label>
+                <input
+                  type="textarea"
+                  name="description"
+                  placeholder="Type instruction"
+                  className="input input-bordered"
+                  required
+                />
+              </div>
+            </div>
+  
+            <div className="form-control mt-6">
+            <input
+            type="submit"
+            value="Update"
+            className="btn btn-block bg-blue-500 text-white-700"
+          />
+  
+            </div>
+          </form>
+        </div>
+      </div>
+    );
+};
+
+export default Update;

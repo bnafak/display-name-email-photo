@@ -4,14 +4,16 @@ import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Main from "./Components/LayOut/Main.jsx";
 import Home from "./Components/Home/Home.jsx";
-import ManageCategory from "./pages/ManageCategory.jsx";
-import AddProduct from "./pages/AddProduct.jsx";
+import ManageCategory from "./dashboard/ManageCategory.jsx";
+
 import Dashboard from "./dashboard/Dashboard.jsx";
 import Login from "./Components/login/Login.jsx";
 import TeachersInfo from "./Components/Home/পরিচিতি/TeachersInfo.jsx";
-import TotalStudent from "./pages/TotalStudent.jsx";
-import StudentCard from "./pages/StudentCard.jsx";
+
 import Chairman from "./Messages/Chairman.jsx";
+import Update from "./dashboard/Update.jsx";
+import AddProduct from './dashboard/AddProduct';
+import TotalStudent from "./dashboard/TotalStudent.jsx";
 
 const router = createBrowserRouter([
   {
@@ -48,8 +50,8 @@ const router = createBrowserRouter([
         loader : () =>fetch('http://localhost:5000/product')
       },
       {
-        path:'/dashboard/student-card',
-        element: <StudentCard></StudentCard>
+        path:'/dashboard/update',
+        element:<Update></Update>
       },
       {
         path:'/dashboard/total-student',

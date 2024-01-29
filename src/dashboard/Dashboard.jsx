@@ -12,7 +12,7 @@ const Dashboard = () => {
         <div className="grid py-5 grid-cols-12 min-h-screen">
           <div className="col-span-2 h-full flex flex-col items-center">
             <NavLink
-              to="/dashboard"
+              to="/"
               className="p-2 my-3 bg-orange-200 border border-stone-500 w-full"
             >
               Home
@@ -23,12 +23,14 @@ const Dashboard = () => {
             >
               Add Student
             </NavLink>
+            
             <NavLink
-              to="/dashboard/student-card"
+              to="/dashboard/update"
               className="p-2 my-3 bg-orange-200 border border-stone-500 w-full"
             >
-              Student Card
+              Uptate
             </NavLink>
+        
             <NavLink
               to="/dashboard/total-student"
               className="p-2 my-3 bg-orange-200 border border-stone-500 w-full"

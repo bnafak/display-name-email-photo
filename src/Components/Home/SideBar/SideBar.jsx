@@ -3,10 +3,10 @@ import { Link } from "react-router-dom";
 
 const SideBar = () => {
   return (
-    <div className="w-3/12 mx-auto border border-l-black flex ">
+    <div className="w-3/12 mx-auto flex ">
      
       <div className="">
-        <div className="flex flex-col items-center border border-l-black "></div>
+        <div className="flex flex-col items-center"></div>
         <div className="bg-green-100">
           <div className="text-center">
             <h1 className="bg-blue-400 font-extrabold">সভাপতি</h1>
